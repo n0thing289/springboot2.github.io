@@ -1,0 +1,10 @@
+#配置端口和上下文路径
+server:
+  port: 8080
+  servlet:
+    context-path: /myboot
+
+#配置自定义数据
+site: wwww.baidu.com
+school:
+  name: 动力节点

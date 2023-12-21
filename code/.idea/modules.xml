@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/springboot-002-first/springboot-002-first.iml" filepath="$PROJECT_DIR$/springboot-002-first/springboot-002-first.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-003-second/springboot-003-second.iml" filepath="$PROJECT_DIR$/springboot-003-second/springboot-003-second.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-005-mvc/springboot-005-mvc.iml" filepath="$PROJECT_DIR$/springboot-005-mvc/springboot-005-mvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-006-environment/springboot-006-environment.iml" filepath="$PROJECT_DIR$/springboot-006-environment/springboot-006-environment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-007-multi-environment/springboot-007-multi-environment.iml" filepath="$PROJECT_DIR$/springboot-007-multi-environment/springboot-007-multi-environment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-008-custom-yml/springboot-008-custom-yml.iml" filepath="$PROJECT_DIR$/springboot-008-custom-yml/springboot-008-custom-yml.iml" />
+    </modules>
+  </component>
+</project>

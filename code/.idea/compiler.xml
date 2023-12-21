@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springboot-006-environment" />
+        <module name="springboot-002-first" />
+        <module name="springboot-005-mvc" />
+        <module name="springboot-008-custom-yml" />
+        <module name="springboot-003-second" />
+        <module name="springboot-007-multi-environment" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="springboot-002-first" target="17" />
+      <module name="springboot-003-second" target="17" />
+      <module name="springboot-005-mvc" target="17" />
+      <module name="springboot-006-environment" target="17" />
+      <module name="springboot-007-multi-environment" target="17" />
+      <module name="springboot-008-custom-yml" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springboot-002-first" options="-parameters" />
+      <module name="springboot-003-second" options="-parameters" />
+      <module name="springboot-005-mvc" options="-parameters" />
+      <module name="springboot-006-environment" options="-parameters" />
+      <module name="springboot-007-multi-environment" options="-parameters" />
+      <module name="springboot-008-custom-yml" options="-parameters" />
+    </option>
+  </component>
+</project>
