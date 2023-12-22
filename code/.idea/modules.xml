@@ -8,6 +8,10 @@
       <module fileurl="file://$PROJECT_DIR$/springboot-006-environment/springboot-006-environment.iml" filepath="$PROJECT_DIR$/springboot-006-environment/springboot-006-environment.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-007-multi-environment/springboot-007-multi-environment.iml" filepath="$PROJECT_DIR$/springboot-007-multi-environment/springboot-007-multi-environment.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-008-custom-yml/springboot-008-custom-yml.iml" filepath="$PROJECT_DIR$/springboot-008-custom-yml/springboot-008-custom-yml.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-009-jsp/springboot-009-jsp.iml" filepath="$PROJECT_DIR$/springboot-009-jsp/springboot-009-jsp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-010-container/springboot-010-container.iml" filepath="$PROJECT_DIR$/springboot-010-container/springboot-010-container.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-011-commandlinerunner/springboot-011-commandlinerunner.iml" filepath="$PROJECT_DIR$/springboot-011-commandlinerunner/springboot-011-commandlinerunner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-012-interceptor/springboot-012-interceptor.iml" filepath="$PROJECT_DIR$/springboot-012-interceptor/springboot-012-interceptor.iml" />
     </modules>
   </component>
 </project>

@@ -28,8 +28,6 @@ api地址：[Overview (Spring Boot 2.7.18 API)](https://docs.spring.io/spring-bo
 
 
 
-
-
 ## 1.1 JavaConfig（Spring）
 
 JavaConfig: 使用java类作为xml配置文件的替代， 是配置spring容器的纯java的方式。 在这个java类这可以创建java对象，把对象放入spring容器中（注入到容器）， 
@@ -148,7 +146,7 @@ public class SpringConfig {
 
 
 
-# 第二 章 Spring Boot
+# 第二章 Spring Boot入门
 
 ## 2.1 介绍
 
@@ -216,6 +214,8 @@ SpringBoot项目的结构：
 
 ![image-20231221151839664](./SpringBootimgs/image-20231221151839664.png)
 
+
+
 ### 2.2.2  使用国内的地址
 
 
@@ -224,13 +224,17 @@ https://start.springboot.io
 
 ![](./images/image-20210115155556662.png)
 
+
+
 ### 2.2.3使用maven构建
 
 1. new module
 2. 引入springboot父项目
 3. 加起步依赖
 
-## 2.3 第一个webApp
+
+
+## 第一个webApp
 
 1. 构建好项目（springboot-005-mvc）
 2. 写一个Rest风格的controller类
@@ -241,15 +245,17 @@ https://start.springboot.io
   - 默认端口和项目名是8080 /
   - 主程序的main来启动web应用
 
-## 2.3  注解的使用
 
-1.@SpringBootConfiguration
+
+## 2.3  主程序注解的使用
+
+1. @SpringBootConfiguration
 
 ```java
 @SpringBootApplication//主程序上的注解
 复合注解：由
 @SpringBootConfiguration//这个注解上有@Configuration
-@EnableAutoConfiguration
+@EnableAutoConfiguration//很复杂
 @ComponentScan
     
     
@@ -269,13 +275,13 @@ public @interface SpringBootConfiguration {
 
 
 
-2.@EnableAutoConfiguration
+2. @EnableAutoConfiguration
 
 启用自动配置， 把java对象配置好，注入到spring容器中。例如可以把mybatis的对象创建好，放入到容器中
 
 
 
-3.@ComponentScan
+3. @ComponentScan
 
 ```java
 @ComponentScan 扫描器，找到注解，根据注解的功能创建对象，给属性赋值等等。
@@ -343,7 +349,9 @@ server:
 1. 写多几个开发环境配置 application-dev.yml | application-test.yml
 2. 在application.yml中配置spring.profiles.active=dev
 
-## 2.6 @ConfigurationProperties
+
+
+## 2.6 使用@ConfigurationProperties
 
 @ConfigurationProperties: 把配置文件的数据映射为java对象。
 
@@ -354,7 +362,7 @@ server:
 @ConfigurationProperties(prefix = "school")
 public class SchoolInfo {
 
-    private String name;
+    private String name;//school.name的值就会被注入到name属性中
 
     private String website;
 
@@ -396,6 +404,19 @@ public class SchoolInfo {
 }
 
 ```
+
+1. 写要映射的pojo对象@Component和@ConfigurationProperties(prefix="keyPrefix")
+2. 在要用的地方@Resource 先根据变量名字自动装配，然后在判断类型进行装配
+
+
+
+映射的类爆红, 是因为你用了ConfigurationProperties, 但是idea没有找到School的元数据
+
+不影响使用, 如果想解决需要引入一个依赖
+
+![image-20231221205342664](./SpringBootimgs/image-20231221205342664.png)
+
+![image-20231221205545719](./SpringBootimgs/image-20231221205545719.png)
 
 
 
@@ -481,9 +502,13 @@ SpringBoot不推荐使用jsp ，而是使用模板技术代替jsp
 
 
 
-3) 创建一个存放jsp的目录，一般叫做webapp
+3. 创建一个存放jsp的目录，一般叫做webapp
 
-​    index.jsp
+   index.jsp
+
+![image-20231221214640802](./SpringBootimgs/image-20231221214640802.png)
+
+​	默认是没有蓝点的,需要在 项目结构 模块下web里面去配置![image-20231221214805264](./SpringBootimgs/image-20231221214805264.png)
 
 
 
@@ -491,15 +516,25 @@ SpringBoot不推荐使用jsp ，而是使用模板技术代替jsp
 
   META-INF/resources
 
-
+![](./SpringBootimgs/image-20231221215452263.png)
 
 5）创建Controller， 访问jsp
 
+![image-20231221215127785](./SpringBootimgs/image-20231221215127785.png)
 
+![image-20231221215219064](./SpringBootimgs/image-20231221215219064.png)
 
 6）在application.propertis文件中配置视图解析器
 
+![image-20231221215252359](./SpringBootimgs/image-20231221215252359.png)
 
+
+
+当我去尝试添加框架支持时, 写好controller被请求后, 跳转到jsp页面,但是没有反应
+
+![image-20231221213840222](./SpringBootimgs/image-20231221213840222.png)
+
+因为你是通过SpringBoot框架的主程序启动的, 而我的操作是配置tomcat服务器; 冲突了, 我到底是把springboot容器放到tomcat服务器, 还是springboot存放tomcat
 
 
 
@@ -510,7 +545,6 @@ SpringBoot不推荐使用jsp ，而是使用模板技术代替jsp
 通过SpringApplication.run(Application.class, args); 返回值获取容器。
 
 ```java
-
 public static ConfigurableApplicationContext run(Class<?> primarySource, String... args) {
         return run(new Class[]{primarySource}, args);
 }
@@ -521,13 +555,36 @@ public interface ConfigurableApplicationContext extends ApplicationContext
 
 
 
-## 2.9 ComnandLineRunner 接口 ，  ApplcationRunner接口
+在主程序内注入对象到容器
+
+```java
+/**
+ * 因为@SpringBootApplication这个注解, 有@SpringBootConfiguration注解
+ * 因为@SpringBootConfiguration注解, 有@Configuration注解
+ *
+ * 因为@Configuration是可以用在JavaConfig中的, 用来代替spring.xml文件
+ * 所以可以在这个@SpringBootApplication类中去创建Bean,并且放入到容器中
+ *
+ * bean的id默认是方法名, 或者通过@Bean name|value属性指定名字
+ * @return
+ */
+@Bean("userServiceByBean")
+public UserService makeUserService(){
+    return new UserServiceImpl();
+}
+```
+
+1. 写好的类你要用@Service("name") 或者使用@Bean例如上面所示
+2. 在主程序用ApplicationContext 接收 SpringApplication.run(Application.class, args)
+3. ac.getBean("beanId", Class<?>)
+
+
+
+## 2.9 使用ComnandLineRunner 接口 ，  ApplcationRunner接口
 
 这两个接口都 有一个run方法。 执行时间在容器对象创建好后， 自动执行run（）方法。
 
 可以完成自定义的在容器对象创建好的一些操作。
-
-
 
 ```java
 @FunctionalInterface
@@ -539,10 +596,10 @@ public interface CommandLineRunner {
 public interface ApplicationRunner {
     void run(ApplicationArguments args) throws Exception;
 }
-
 ```
 
-
+1. 主程序类去实现这两个之一的接口
+2. 主程序类重写接口的run方法
 
 
 
@@ -594,7 +651,6 @@ public interface ApplicationRunner {
 SpringBoot中注册拦截器：
 
 ```java
-
 @Configuration
 public class MyAppConfig implements WebMvcConfigurer {
 
@@ -617,7 +673,9 @@ public class MyAppConfig implements WebMvcConfigurer {
 }
 ```
 
-
+1. 写一个拦截器实现一个接口 HandlerInterceptor
+2. 写一个配置类实现一个接口 WebMvcConfigurer 并加上@Configuration注解
+3. 实现addInterceptors方法, 写拦截规则
 
 ## 3.2  Servlet
 
