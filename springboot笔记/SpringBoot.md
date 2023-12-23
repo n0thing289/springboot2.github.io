@@ -1128,7 +1128,7 @@ RESTful架构风格
 
 ​        删除资源： 去除
 
-​       
+
 
  资源使用url表示，通过名词表示资源。
 
@@ -1245,7 +1245,9 @@ RESTful架构风格
 1. application.properties(yml) : 开启使用 HiddenHttpMethodFilter 过滤器
 2. 在请求页面中，包含 _method参数， 他的值是 put， delete  ，  发起这个请求使用的post方式
 
+## rest看springmvc的rest内容就好
 
+知识点没区别
 
 # 第六章 Redis
 
@@ -1719,7 +1721,7 @@ CREATE TABLE `student` (
 
 
 
-4）主启动类继承SpringBootServletInitializer
+4）主启动类继承SpringBootServletInitializer + 重写configure方法
 
 ```java
 /**

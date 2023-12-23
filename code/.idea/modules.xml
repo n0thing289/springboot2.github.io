@@ -15,6 +15,7 @@
       <module fileurl="file://$PROJECT_DIR$/springboot-017-mapper/springboot-017-mapper.iml" filepath="$PROJECT_DIR$/springboot-017-mapper/springboot-017-mapper.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-018-mapperscan/springboot-018-mapperscan.iml" filepath="$PROJECT_DIR$/springboot-018-mapperscan/springboot-018-mapperscan.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-019-transaction/springboot-019-transaction.iml" filepath="$PROJECT_DIR$/springboot-019-transaction/springboot-019-transaction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-025-war/springboot-025-war.iml" filepath="$PROJECT_DIR$/springboot-025-war/springboot-025-war.iml" />
     </modules>
   </component>
 </project>
