@@ -5,10 +5,12 @@ import com.bjpowernode.pojo.Student;
 import com.bjpowernode.service.StudentService;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service("studentService")
+
 public class StudentServiceImpl implements StudentService {
 
     @Resource
@@ -20,6 +22,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Student selectStudentById(Integer id) {
         Student stu = studentMapper.selectById(id);
         return stu;
