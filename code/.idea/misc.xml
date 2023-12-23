@@ -13,6 +13,9 @@
         <option value="$PROJECT_DIR$/springboot-010-container/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-011-commandlinerunner/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-012-interceptor/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-017-mapper/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-018-mapperscan/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-019-transaction/pom.xml" />
       </list>
     </option>
   </component>

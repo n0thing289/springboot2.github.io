@@ -679,6 +679,10 @@ public class MyAppConfig implements WebMvcConfigurer {
 
 ## 3.2  Servlet
 
+>模块: springboot-13-servlet
+>
+>我没有去写这个案例
+
 在SpringBoot框架中使用Servlet对象。
 
 使用步骤：
@@ -688,11 +692,9 @@ public class MyAppConfig implements WebMvcConfigurer {
 
 
 
+例子：
 
-
- 例子：
-
-1.创建自定义Servlet
+1. 创建自定义Servlet
 
 ```java
 //创建Servlet类
@@ -744,9 +746,16 @@ public class WebApplictionConfig {
 }
 ```
 
+1. 写一个servlet 继承 HttpServlet
+2. 写一个配置类@Configuration + ServletRegistrationBean的构造方法 然后@Bean返回这个对象
+
 
 
 ## 3.3 过滤器Filter
+
+>模块: springboot-14-filter
+>
+>我也没有去写这个案例
 
 Filter是Servlet规范中的过滤器，可以处理请求， 对请求的参数， 属性进行调整。 常常在过滤器中处理字符编码
 
@@ -758,6 +767,8 @@ Filter是Servlet规范中的过滤器，可以处理请求， 对请求的参数
 
 
 例子：
+
+1. 创建自定义过滤器类
 
 ```java
 // 自定义过滤器
@@ -772,7 +783,7 @@ public class MyFilter implements Filter {
 
 
 
-注册Filter
+2. 注册Filter过滤器对象
 
 ```java
 @Configuration
@@ -781,12 +792,18 @@ public class WebApplicationConfig {
     @Bean
     public FilterRegistrationBean filterRegistrationBean(){
         FilterRegistrationBean bean  = new FilterRegistrationBean();
-        bean.setFilter( new MyFilter());
+        bean.setFilter(new MyFilter());
         bean.addUrlPatterns("/user/*");
         return bean;
     }
 }
 ```
+
+1. 写一个自定义过滤器实现接口Filter + 重写doFilter()方法
+
+   filterChain.doFilter(servletRequest,servletResponse);不能少!
+
+2. 写一个配置类@Configuration + FilterRegistrationBean的setXxx方法 然后@Bean返回这个对象
 
 
 
@@ -798,11 +815,15 @@ CharacterEncodingFilter : 解决post请求中乱码的问题
 
 
 
-第一种方式：
+### 第一种方式：
+
+>模块: springboot-15-character-filter
+>
+>我也没有去写这个案例
 
 使用步骤：
 
-1. 配置字符集过滤器
+1.  配置字符集过滤器
 
    ```java
    @Configuration
@@ -849,7 +870,11 @@ server.servlet.encoding.enabled=false
 
 
 
-第二种方式
+### 第二种方式
+
+>模块: springboot-16-character-properties
+>
+>我也没有去写这个案例
 
 修改application.properties文件
 
@@ -857,7 +882,7 @@ server.servlet.encoding.enabled=false
 server.port=9001
 server.servlet.context-path=/myboot
 
-#让系统的CharacterEncdoingFilter生效
+#让系统的CharacterEncdoingFilter生效, 默认是true
 server.servlet.encoding.enabled=true
 #指定使用的编码方式
 server.servlet.encoding.charset=utf-8
@@ -865,9 +890,29 @@ server.servlet.encoding.charset=utf-8
 server.servlet.encoding.force=true
 ```
 
+注意: springboot3使用的内嵌tomcat是10的版本, 默认使用utf-8. 
+
+所以只设置force=true也行
+
 
 
 # 第四章 ORM 操作 MySQL
+
+>springboot-017-mapper
+>
+>springboot-018-mapperscan
+>
+>springboot-019-transaction 没写, 有空自己测
+>
+>注意：使用@MapperScan + 老杜讲的分开建包方mapper.xml 就可以使用mybatis了
+
+环境准备:
+
+- 建库: springboot_db
+
+- 建表
+
+  ![image-20231222215641088](./SpringBootimgs/image-20231222215641088.png)
 
 
 
@@ -913,8 +958,6 @@ public interface StudentDao {
 
 
 
-
-
 ### 第二种方式  @MapperScan
 
 
@@ -934,7 +977,7 @@ public class Application {
 
 ### 第三种方式： Mapper文件和Dao接口分开管理
 
-
+>==按老杜教的建包放mapper.xml文件的方式, 不需要以下这些配置 (已测试通过)==
 
  现在把Mapper文件放在resources目录下
 
@@ -967,8 +1010,6 @@ mybatis.configuration.log-impl=org.apache.ibatis.logging.stdout.StdOutImpl
 
 
 
-
-
 ### 第四个  事务
 
 Spring框架中的事务：
@@ -989,9 +1030,7 @@ Spring框架中的事务：
 
 
 
-​    
-
-SpringBoot中使用事务： 上面的两种方式都可以。
+==SpringBoot中使用事务： 上面的两种方式都可以。==
 
 1）在业务方法的上面加入@Transactional ,  加入注解后，方法有事务功能了。
 

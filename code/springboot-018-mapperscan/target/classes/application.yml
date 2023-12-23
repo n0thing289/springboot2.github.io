@@ -1,0 +1,22 @@
+#tomcat
+server:
+  port: 8080
+  servlet:
+    context-path: /myboot18
+    encoding:
+      enabled: true
+      charset: UTF-8
+      force: true
+#连接数据库
+#com.mysql.jdbc.Driver
+#mysql驱动高版本8 需要配置时区
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot_db?rewriteBatchedStatements=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: hsp
+
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
