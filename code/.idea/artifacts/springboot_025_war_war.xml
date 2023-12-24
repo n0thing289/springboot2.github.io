@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="myjspboot.war">
+    <root id="archive" name="myboot.war">
       <element id="artifact" artifact-name="springboot-025-war:war exploded" />
     </root>
   </artifact>

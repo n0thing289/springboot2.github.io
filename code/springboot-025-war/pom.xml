@@ -38,9 +38,10 @@
     </dependencies>
 
     <packaging>war</packaging>
+
     <build>
         <!--打包后的文件名称-->
-        <finalName>myjspboot</finalName>
+        <finalName>myboot</finalName>
         <!--使用插件,把jsp编译到指定目录-->
 <!--        <resources>-->
 <!--            <resource>-->

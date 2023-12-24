@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="springboot-ssm" />
         <module name="springboot-019-transaction" />
         <module name="springboot-003-second" />
         <module name="springboot-025-war" />
@@ -14,6 +15,7 @@
         <module name="springboot-007-multi-environment" />
         <module name="springboot-018-mapperscan" />
         <module name="springboot-017-mapper" />
+        <module name="springboot-ssm02" />
         <module name="springboot-005-mvc" />
         <module name="springboot-006-environment" />
         <module name="springboot-010-container" />
@@ -37,6 +39,9 @@
       <module name="springboot-018-mapperscan" target="17" />
       <module name="springboot-019-transaction" target="17" />
       <module name="springboot-025-war" target="17" />
+      <module name="springboot-026-wardemo" target="17" />
+      <module name="springboot-ssm" target="17" />
+      <module name="springboot-ssm02" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -55,6 +60,9 @@
       <module name="springboot-018-mapperscan" options="-parameters" />
       <module name="springboot-019-transaction" options="-parameters" />
       <module name="springboot-025-war" options="-parameters" />
+      <module name="springboot-026-wardemo" options="-parameters" />
+      <module name="springboot-ssm" options="-parameters" />
+      <module name="springboot-ssm02" options="-parameters" />
     </option>
   </component>
 </project>

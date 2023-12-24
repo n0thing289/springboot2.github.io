@@ -1,0 +1,36 @@
+#服务器
+server:
+  port: 8080
+  servlet:
+    context-path: /mvc11
+    #解决中文乱码
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+
+#数据库链接信息?serverTimezone=Asia/Shanghai
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ssm_db
+    username: root
+    password: hsp
+
+#  mvc:
+#    static-path-pattern: /pages/**
+#  web:
+#    resources:
+#      static-locations: classpath:/static,classpath:/public,classpath:/resources,classpath:/META-INF/resources,file:SystemData
+
+
+#mybatis
+mybatis:
+  configuration:
+    #开启日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #开启自动驼峰映射
+    map-underscore-to-camel-case: true
+
+  #给pojo类起别名
+  type-aliases-package: com.weikai.pojo.Book

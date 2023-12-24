@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="springboot-025-war:war exploded">
-    <output-path>$PROJECT_DIR$/springboot-025-war/target/myjspboot</output-path>
+    <output-path>$PROJECT_DIR$/springboot-025-war/target/myboot</output-path>
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
@@ -54,7 +54,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/springboot-025-war/target/myjspboot/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/springboot-025-war/target/myboot/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="springboot-025-war/web/Web" />
     </root>

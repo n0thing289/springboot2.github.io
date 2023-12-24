@@ -2,6 +2,8 @@
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/springboot-025-war" />
+    <file type="web" url="file://$PROJECT_DIR$/springboot-026-wardemo" />
+    <file type="web" url="file://$PROJECT_DIR$/springboot-ssm" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
@@ -20,6 +22,8 @@
         <option value="$PROJECT_DIR$/springboot-018-mapperscan/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-019-transaction/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-025-war/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-ssm/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-ssm02/pom.xml" />
       </list>
     </option>
   </component>
