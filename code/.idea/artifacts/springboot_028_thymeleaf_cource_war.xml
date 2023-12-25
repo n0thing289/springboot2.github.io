@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="springboot-028-thymeleaf-cource:war">
+    <output-path>$PROJECT_DIR$/springboot-028-thymeleaf-cource/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>springboot-028-thymeleaf-cource</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="springboot-028-thymeleaf-cource-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="springboot-028-thymeleaf-cource:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1829,6 +1829,8 @@ public class JspApplication  extends SpringBootServletInitializer  {
 
 # 第九章 Thymeleaf 模板引擎
 
+>由于比赛需要, 模板我只看到p100集, 剩下的以后再看; 并且vue是可以代替模板引擎的
+
 Thymeleaf： 是使用java开发的模板技术， 在服务器端运行。 把处理后的数据发送给浏览器。
 
 ​         模板是作视图层工作的。  显示数据的。  Thymeleaf是基于Html语言。 Thymleaf语法是应用在
@@ -1841,6 +1843,12 @@ Thymeleaf 的官方网站：http://www.thymeleaf.org
 Thymeleaf 官方手册：https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html
 
 
+
+==(前缀 + 逻辑名称 + 后缀 => /templates/hello.html) 前缀后缀的默认值如上==
+
+html页面编写没有智能需要在html标签声明==xmlnx:th="http://www.thymeleaf.org"==
+
+放在templates目录中的html都不能直接访问, 必须经过controller跳转才行除非你配置springboot的默认规则
 
 ## 9.1 表达式
 
@@ -1889,21 +1897,28 @@ Thymeleaf 官方手册：https://www.thymeleaf.org/doc/tutorials/3.0/usingthymel
    <p th:text="*{myuser.name}" ></p>
    ```
 
-3. 链接表达式
+
+
+2. 链接表达式
 
    语法： @{url}
 
    作用： 表示链接， 可以
 
    ```html
-    <script src="..."> , <link href="..."> <a href=".."> ,<form action="..."> <img src="...">
+   <script th:src="@{http://www.baidu.com}">     绝对地址
+   <link th:href="@{/abc/test}">				  相对地址
+   <a th:href="@{'/abc/test?id=' + ${userId}}">  相对地址, 拼串传参
+   <form th:action="@{/abc/test(id=${userId})}"> 推荐传参方式
+   <img th:src="@{/abc/test(name='张三', age=20)}">  推荐传递多个参数
    ```
 
-   
+
+
 
 ## 9.2  Thymeleaf属性
 
-属性是放在html元素中的，就是html元素的属性，加入了th前缀。  属性的作用不变。    加入上th， 属性的值由模板引擎处理了。  在属性可以使用变量表达式
+属性是放在html元素中的，就是html元素的属性，==加入了th前缀==。  ==属性的作用不变==。    加入上th， 属性的值由模板引擎处理了。  ==在属性可以使用变量表达式==
 
 例如：
 
@@ -1912,8 +1927,6 @@ Thymeleaf 官方手册：https://www.thymeleaf.org/doc/tutorials/3.0/usingthymel
 
 <form th:action="/loginServlet" th:method="${methodAttr}"></form>
 ```
-
-
 
 
 
@@ -1926,13 +1939,11 @@ each循环， 可以循环List，Array
 在一个html标签中，使用th:each
 
 ```xml
-<div th:each="集合循环成员,循环的状态变量:${key}">
+<div th:each="集合循环成员, 循环的状态变量:${key}">
     <p th:text="${集合循环成员}" ></p>
 </div>
 
-集合循环成员,循环的状态变量:两个名称都是自定义的。 “循环的状态变量”这个名称可以不定义，默认是"集合循环成员Stat"
-
-
+集合循环成员,循环的状态变量:两个名称都是自定义的。 “循环的状态变量”这个名称可以不定义，默认是"集合循环成员,Stat"
 ```
 
 
@@ -2188,25 +2199,23 @@ session 表示Map对象的， 是#session的简单表示方式， 用来获取se
 ```html
 例子：
  <div style="margin-left: 350px">
-        <h3>内置对象#request,#session，session的使用</h3>
-        <p>获取作用域中的数据</p>
-        <p th:text="${#request.getAttribute('requestData')}"></p>
-        <p th:text="${#session.getAttribute('sessionData')}"></p>
-        <p th:text="${session.loginname}"></p>
+<h3>内置对象#request,#session，session的使用</h3>
+<p>获取作用域中的数据</p>
+<p th:text="${#request.getAttribute('requestData')}"></p>
+<p th:text="${#session.getAttribute('sessionData')}"></p>
+<p th:text="${session.loginname}"></p>
 
-        <br/>
-        <br/>
-        <h3>使用内置对象的方法</h3>
-        getRequestURL=<span th:text="${#request.getRequestURL()}"></span><br/>
-        getRequestURI=<span th:text="${#request.getRequestURI()}"></span><br/>
-        getQueryString=<span th:text="${#request.getQueryString()}"></span><br/>
-        getContextPath=<span th:text="${#request.getContextPath()}"></span><br/>
-        getServerName=<span th:text="${#request.getServerName()}"></span><br/>
-        getServerPort=<span th:text="${#request.getServerPort()}"></span><br/>
+<br/>
+<br/>
+<h3>使用内置对象的方法</h3>
+getRequestURL=<span th:text="${#request.getRequestURL()}"></span><br/>
+getRequestURI=<span th:text="${#request.getRequestURI()}"></span><br/>
+getQueryString=<span th:text="${#request.getQueryString()}"></span><br/>
+getContextPath=<span th:text="${#request.getContextPath()}"></span><br/>
+getServerName=<span th:text="${#request.getServerName()}"></span><br/>
+getServerPort=<span th:text="${#request.getServerPort()}"></span><br/>
 </div>
 ```
-
-
 
 
 

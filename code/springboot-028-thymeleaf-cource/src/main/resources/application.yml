@@ -1,0 +1,16 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /mvc
+
+spring:
+  thymeleaf:
+    cache: false # 开发中经常调试页面,不需要缓存来提高性能, 让修改立即生效
+    # 模板编码
+    encoding: UTF-8
+    # 模板类型
+    mode: HTML
+    # 默认路径
+    prefix: classpath:/templates
+    # 后缀 (前缀 + 逻辑名称 + 后缀 => /templates/hello.html) 前缀后缀的默认值如上
+    suffix: .html

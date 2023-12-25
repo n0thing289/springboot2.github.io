@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController//@Controller + @ResponseBody
-@RequestMapping("/books")
+@RequestMapping("/mvc11/books")
 public class BookController {
 
     @Autowired

@@ -16,6 +16,8 @@
       <module fileurl="file://$PROJECT_DIR$/springboot-018-mapperscan/springboot-018-mapperscan.iml" filepath="$PROJECT_DIR$/springboot-018-mapperscan/springboot-018-mapperscan.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-019-transaction/springboot-019-transaction.iml" filepath="$PROJECT_DIR$/springboot-019-transaction/springboot-019-transaction.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-025-war/springboot-025-war.iml" filepath="$PROJECT_DIR$/springboot-025-war/springboot-025-war.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-027-thymeleaf-first/springboot-027-thymeleaf-first.iml" filepath="$PROJECT_DIR$/springboot-027-thymeleaf-first/springboot-027-thymeleaf-first.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-028-thymeleaf-cource/springboot-028-thymeleaf-cource.iml" filepath="$PROJECT_DIR$/springboot-028-thymeleaf-cource/springboot-028-thymeleaf-cource.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-ssm/springboot-ssm.iml" filepath="$PROJECT_DIR$/springboot-ssm/springboot-ssm.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-ssm02/springboot-ssm02.iml" filepath="$PROJECT_DIR$/springboot-ssm02/springboot-ssm02.iml" />
     </modules>

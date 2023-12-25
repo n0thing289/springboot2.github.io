@@ -9,11 +9,13 @@
         <module name="springboot-ssm" />
         <module name="springboot-019-transaction" />
         <module name="springboot-003-second" />
+        <module name="springboot-028-thymeleaf-cource" />
         <module name="springboot-025-war" />
         <module name="springboot-012-interceptor" />
         <module name="springboot-008-custom-yml" />
         <module name="springboot-007-multi-environment" />
         <module name="springboot-018-mapperscan" />
+        <module name="springboot-027-thymeleaf-first" />
         <module name="springboot-017-mapper" />
         <module name="springboot-ssm02" />
         <module name="springboot-005-mvc" />
@@ -40,6 +42,8 @@
       <module name="springboot-019-transaction" target="17" />
       <module name="springboot-025-war" target="17" />
       <module name="springboot-026-wardemo" target="17" />
+      <module name="springboot-027-thymeleaf-first" target="17" />
+      <module name="springboot-028-thymeleaf-cource" target="17" />
       <module name="springboot-ssm" target="17" />
       <module name="springboot-ssm02" target="17" />
     </bytecodeTargetLevel>
@@ -61,6 +65,8 @@
       <module name="springboot-019-transaction" options="-parameters" />
       <module name="springboot-025-war" options="-parameters" />
       <module name="springboot-026-wardemo" options="-parameters" />
+      <module name="springboot-027-thymeleaf-first" options="-parameters" />
+      <module name="springboot-028-thymeleaf-cource" options="-parameters" />
       <module name="springboot-ssm" options="-parameters" />
       <module name="springboot-ssm02" options="-parameters" />
     </option>

@@ -49,6 +49,7 @@
     </dependencies>
 
     <build>
+        <finalName>boot-ssm</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

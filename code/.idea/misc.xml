@@ -3,6 +3,7 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/springboot-025-war" />
     <file type="web" url="file://$PROJECT_DIR$/springboot-026-wardemo" />
+    <file type="web" url="file://$PROJECT_DIR$/springboot-028-thymeleaf-cource" />
     <file type="web" url="file://$PROJECT_DIR$/springboot-ssm" />
   </component>
   <component name="MavenProjectsManager">
@@ -24,6 +25,8 @@
         <option value="$PROJECT_DIR$/springboot-025-war/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-ssm/pom.xml" />
         <option value="$PROJECT_DIR$/springboot-ssm02/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-027-thymeleaf-first/pom.xml" />
+        <option value="$PROJECT_DIR$/springboot-028-thymeleaf-cource/pom.xml" />
       </list>
     </option>
   </component>
