@@ -26,42 +26,41 @@
 
 <body class="hold-transition">
 
-<div id="app">
+    <div id="app">
 
-    <div class="content-header">
+        <div class="content-header">
 
-        <h1>图书管理</h1>
+            <h1>图书管理</h1>
 
-    </div>
+        </div>
 
-    <div class="app-container">
+        <div class="app-container">
 
-        <div class="box">
+            <div class="box">
 
-            <div class="filter-container">
+                <div class="filter-container">
 
-                <el-input placeholder="图书名称" v-model="pagination.queryString" style="width: 200px;"
-                          class="filter-item"></el-input>
+                    <el-input placeholder="图书名称" v-model="pagination.queryString" style="width: 200px;" class="filter-item"></el-input>
 
-                <el-button @click="getAll()" class="dalfBut">查询</el-button>
+                    <el-button @click="getAll()" class="dalfBut">查询</el-button>
 
-                <el-button type="primary" class="butT" @click="handleCreate()">新建</el-button>
+                    <el-button type="primary" class="butT" @click="handleCreate()">新建</el-button>
 
-            </div>
+                </div>
 
-            <el-table size="small" current-row-key="id" :data="dataList" stripe highlight-current-row>
+                <el-table size="small" current-row-key="id" :data="dataList" stripe highlight-current-row>
 
-                <el-table-column type="index" align="center" label="序号"></el-table-column>
+                    <el-table-column type="index" align="center" label="序号"></el-table-column>
 
-                <el-table-column prop="type" label="图书类别" align="center"></el-table-column>
+                    <el-table-column prop="type" label="图书类别" align="center"></el-table-column>
 
-                <el-table-column prop="name" label="图书名称" align="center"></el-table-column>
+                    <el-table-column prop="name" label="图书名称" align="center"></el-table-column>
 
-                <el-table-column prop="description" label="描述" align="center"></el-table-column>
+                    <el-table-column prop="description" label="描述" align="center"></el-table-column>
 
-                <el-table-column label="操作" align="center">
+                    <el-table-column label="操作" align="center">
 
-                    <template slot-scope="scope">
+                        <template slot-scope="scope">
 
                         <el-button type="primary" size="mini" @click="handleUpdate(scope.row)">编辑</el-button>
 
@@ -69,137 +68,135 @@
 
                     </template>
 
-                </el-table-column>
+                    </el-table-column>
 
-            </el-table>
+                </el-table>
 
-            <!-- 新增标签弹层 -->
+                <!-- 新增标签弹层 -->
 
-            <div class="add-form">
+                <div class="add-form">
 
-                <el-dialog title="新增图书" :visible.sync="dialogFormVisible">
+                    <el-dialog title="新增图书" :visible.sync="dialogFormVisible">
 
-                    <el-form ref="dataAddForm" :model="formData" :rules="rules" label-position="right"
-                             label-width="100px">
+                        <el-form ref="dataAddForm" :model="formData" :rules="rules" label-position="right" label-width="100px">
 
-                        <el-row>
+                            <el-row>
 
-                            <el-col :span="12">
+                                <el-col :span="12">
 
-                                <el-form-item label="图书类别" prop="type">
+                                    <el-form-item label="图书类别" prop="type">
 
-                                    <el-input v-model="formData.type"/>
+                                        <el-input v-model="formData.type" />
 
-                                </el-form-item>
+                                    </el-form-item>
 
-                            </el-col>
+                                </el-col>
 
-                            <el-col :span="12">
+                                <el-col :span="12">
 
-                                <el-form-item label="图书名称" prop="name">
+                                    <el-form-item label="图书名称" prop="name">
 
-                                    <el-input v-model="formData.name"/>
+                                        <el-input v-model="formData.name" />
 
-                                </el-form-item>
+                                    </el-form-item>
 
-                            </el-col>
+                                </el-col>
 
-                        </el-row>
+                            </el-row>
 
 
-                        <el-row>
+                            <el-row>
 
-                            <el-col :span="24">
+                                <el-col :span="24">
 
-                                <el-form-item label="描述">
+                                    <el-form-item label="描述">
 
-                                    <el-input v-model="formData.description" type="textarea"></el-input>
+                                        <el-input v-model="formData.description" type="textarea"></el-input>
 
-                                </el-form-item>
+                                    </el-form-item>
 
-                            </el-col>
+                                </el-col>
 
-                        </el-row>
+                            </el-row>
 
-                    </el-form>
+                        </el-form>
 
-                    <div slot="footer" class="dialog-footer">
+                        <div slot="footer" class="dialog-footer">
 
-                        <el-button @click="dialogFormVisible = false">取消</el-button>
+                            <el-button @click="dialogFormVisible = false">取消</el-button>
 
-                        <el-button type="primary" @click="handleAdd()">确定</el-button>
+                            <el-button type="primary" @click="handleAdd()">确定</el-button>
 
-                    </div>
+                        </div>
 
-                </el-dialog>
+                    </el-dialog>
 
-            </div>
+                </div>
 
-            <!-- 编辑标签弹层 -->
-            <div class="add-form">
+                <!-- 编辑标签弹层 -->
+                <div class="add-form">
 
-                <el-dialog title="编辑检查项" :visible.sync="dialogFormVisible4Edit">
+                    <el-dialog title="编辑检查项" :visible.sync="dialogFormVisible4Edit">
 
-                    <el-form ref="dataEditForm" :model="formData" :rules="rules" label-position="right"
-                             label-width="100px">
+                        <el-form ref="dataEditForm" :model="formData" :rules="rules" label-position="right" label-width="100px">
 
-                        <el-row>
+                            <el-row>
 
-                            <el-col :span="12">
+                                <el-col :span="12">
 
-                                <el-form-item label="图书类别" prop="type">
+                                    <el-form-item label="图书类别" prop="type">
 
-                                    <el-input v-model="formData.type"/>
+                                        <el-input v-model="formData.type" />
 
-                                </el-form-item>
+                                    </el-form-item>
 
-                            </el-col>
+                                </el-col>
 
-                            <el-col :span="12">
+                                <el-col :span="12">
 
-                                <el-form-item label="图书名称" prop="name">
+                                    <el-form-item label="图书名称" prop="name">
 
-                                    <el-input v-model="formData.name"/>
+                                        <el-input v-model="formData.name" />
 
-                                </el-form-item>
+                                    </el-form-item>
 
-                            </el-col>
+                                </el-col>
 
-                        </el-row>
+                            </el-row>
 
-                        <el-row>
+                            <el-row>
 
-                            <el-col :span="24">
+                                <el-col :span="24">
 
-                                <el-form-item label="描述">
+                                    <el-form-item label="描述">
 
-                                    <el-input v-model="formData.description" type="textarea"></el-input>
+                                        <el-input v-model="formData.description" type="textarea"></el-input>
 
-                                </el-form-item>
+                                    </el-form-item>
 
-                            </el-col>
+                                </el-col>
 
-                        </el-row>
+                            </el-row>
 
-                    </el-form>
+                        </el-form>
 
-                    <div slot="footer" class="dialog-footer">
+                        <div slot="footer" class="dialog-footer">
 
-                        <el-button @click="dialogFormVisible4Edit = false">取消</el-button>
+                            <el-button @click="dialogFormVisible4Edit = false">取消</el-button>
 
-                        <el-button type="primary" @click="handleEdit()">确定</el-button>
+                            <el-button type="primary" @click="handleEdit()">确定</el-button>
 
-                    </div>
+                        </div>
 
-                </el-dialog>
+                    </el-dialog>
+
+                </div>
 
             </div>
 
         </div>
 
     </div>
-
-</div>
 
 </body>
 
@@ -246,6 +243,7 @@
             //列表
             getAll() {
                 axios.get("/mvc11/books").then((res) => {
+                    console.log("249:" + res);
                     this.dataList = res.data.data;
                 });
             },

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ahhh</title>
+    <script src="login/js/jquery-3.6.0.min.js"></script>
+    <script src="login/js/axios-0.18.0.js"></script>
+<!--    这个页面要做拦截-->
+<!--    <script src="interceptor.js"></script>-->
+
+    <script>
+        //控制页面跳转
+        window.onload = function(){
+            axios.interceptors.request.use(
+                config => {
+                    console.log(config) // 该处可以将config打印出来看一下，该部分将发送给后端（server端）
+                    // config.headers.Authorization = store.state.token
+
+                    console.log("拦截到请求了")
+                    // return config // 对config处理完后返回，下一步将向后端发送请求
+                    alert("111")
+                },
+                error => { // 当发生错误时，执行该部分代码
+                    // console.log(error) // 调试用
+                    return Promise.reject(error)
+                }
+            )
+            $(".books").click(()=>{
+                //
+                window.location.href = "books/pages/books2.html"
+                // axios.get("books/pages/books2.html").then((res)=>{
+                //     console.log(res)
+                // })
+            })
+        }
+    </script>
+</head>
+<body>
+    <h1>欢迎访问我的网站!!!</h1>
+<!--    <h3>图书管理页面</h3>-->
+    <h2>只有此页面做了拦截器</h2>
+    <button class="books">图书管理页面go</button>
+    <br/>
+    <br>
+    <button href="login/login.html">登录页面</button>
+</body>
+</html>

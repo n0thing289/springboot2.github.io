@@ -1,0 +1,27 @@
+登录测试账号:
+  username: "root"
+  password: 111
+
+服务器算法和签名:
+  算法: HMAC256
+  签名: sign
+
+后端登录请求接口:
+  请求方法: POST
+  请求路径: http://localhost:8080/logins
+  请求参数: {"username":"", "password":""}
+  响应实例: {
+            "data": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IjExMSIsImV4cCI6MTcwMzY2NDkyMiwidXNlcm5hbWUiOiJyb290In0.iLDxjdT_80kdiqjmPRmnamlX8v5oCOgWJHzk7WUvCD8",
+            "code": 20051, # 20050表示登录失败
+            "msg": null
+           }
+
+前端页面实现:
+  主页面: 这是主界面, 用vue写一些点击就可以跳转其他页面的按纽
+  写待跳转页面: 测试页面1, 测试页面2
+  登录页面: 这是登录页面; 用于登录、发送登录请求、获取token
+  实现跳转验证功能: 假设第一次跳转, 解码出token的username和password来验证
+           如果没有就跳转到登录页面
+           如果有就允许跳转
+           之后每次跳转同理需要验证
+  实现登录功能: 携带json参数发给后端接口, 响应回来后存储token

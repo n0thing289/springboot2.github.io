@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ahhh</title>
+    <script src="login/js/jquery-3.6.0.min.js"></script>
+    <script src="login/js/axios-0.18.0.js"></script>
+<!--    这个页面要做拦截-->
+<!--    <script src="interceptor.js"></script>-->
+
+    <script>
+        //控制页面跳转
+        window.onload = function(){
+            $(".books").click(()=>{
+
+                window.location.href = "../templates/books/pages/books.html?token=" + localStorage.getItem("token")
+
+            })
+        }
+    </script>
+</head>
+<body>
+    <h1>欢迎访问我的网站!!!</h1>
+<!--    <h3>图书管理页面</h3>-->
+    <hr/>
+
+    <h2>第一次点图书管理会登录!</h2>
+    <button class="books">图书管理页面go</button>
+    <br/>
+    <br>
+    <button href="login/login.html">登录页面</button>
+</body>
+</html>

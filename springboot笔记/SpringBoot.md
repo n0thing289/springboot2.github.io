@@ -2397,3 +2397,166 @@ Dubbo注解
 
 
 
+# 前后端交互模块
+
+axios
+
+rest风格
+
+rest应用
+
+响应数据的规范化
+
+
+
+///////////////////////////
+
+create
+
+```js
+axios.post("/mvc11/books", this.formData).then((res) => {
+    console.log(res.data);//响应体数据
+    if (res.data.code === 20011) {
+        //如果操作成功，关闭层，显示数据
+        this.dialogFormVisible = false;
+        this.$message.success("添加成功");
+    } else if (res.data.code === 20010) {
+        this.$message.error("添加失败");
+    } else {
+        this.$message.error(res.data.msg);
+    }
+    this.getAll();
+});
+```
+
+deleteById
+
+```js
+axios.delete("/mvc11/books/" + row.id).then((res) => {
+    if (res.data.code == 20021) {
+        this.$message.success("删除成功");
+    } else {
+        this.$message.error("删除失败");
+    }
+});
+```
+
+update
+
+```js
+axios.put("/mvc11/books", this.formData).then((res) => {
+    console.log(res.data);
+    if (res.data.code === 20031) {
+        //如果操作成功，关闭层，显示数据
+        this.dialogFormVisible4Edit = false;
+        this.$message.success("修改成功");
+    } else if (res.data.code === 20030) {
+        this.$message.error("修改失败");
+    } else {
+        this.$message.error(res.data.msg);
+    }
+    this.getAll();
+});
+```
+
+selectById
+
+```js
+axios.get("/mvc11/books/" + id).then((res) => {
+    //...
+});
+```
+
+selectAll
+
+```js
+axios.get("/mvc11/books").then((res) => {
+    console.log("249:" + res);
+    this.dataList = res.data.data;
+});
+```
+
+
+
+# 登录模块
+
+jwt极简入门: [【极简入门】15分钟学会JWT的使用_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1cK4y197EM/?spm_id_from=333.337.search-card.all.click&vd_source=d179dd0d9ece5a3d72eb7942bd195cb8)
+
+[SpringBoot入门到精通--51--登录功能实现--登录逻辑讲解_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1qY41177ay/?spm_id_from=333.788&vd_source=d179dd0d9ece5a3d72eb7942bd195cb8)
+
+
+
+
+
+
+
+后端使用jsp不分离登录流程图
+
+
+
+前后端分离登录流程图 vue.js
+
+![image-20231226130852593](./SpringBootimgs/image-20231226130852593.png)
+
+
+
+集群，一个人用session/cookie没问题，但是一旦访问量大，服务器的内存花销很大
+
+![image-20231226133412390](./SpringBootimgs/image-20231226133412390.png)
+
+axios携带cookie发请求比较麻烦
+
+所以现在换个地方存数据，本地存储空间，存一个jwt的加密字符串。携带jwt来通信
+
+
+
+jwt流程图
+
+![image-20231226134425984](./SpringBootimgs/image-20231226134425984.png)
+
+jwt集群， jwt是可以在集群中任意服务器都能解析
+
+
+
+## 实现jwt
+
+### 生成token
+
+
+
+[JWT详细教程与使用_jwt教程-CSDN博客](https://blog.csdn.net/Top_L398/article/details/109361680)
+
+require做验证，验证失败就抛异常
+
+decode不能做验证，只可以解析负载
+
+
+
+### token存起来
+
+[vue前端利用localStorage存储token值并放到请求头headers实例_两个网站通过localstorage公用一个token-CSDN博客](https://blog.csdn.net/bentou_/article/details/105400022)
+
+
+
+js页面跳转
+
+```js
+window.location.href = ""
+```
+
+js存入localStorage
+
+```js
+localStorage.setItem("", "") 
+.getItem("")
+```
+
+
+
+### axios发送token
+
+axios拦截所有请求: [axios 请求拦截器&响应拦截器 - 掘金 (juejin.cn)](https://juejin.cn/post/7100470316857557006)
+
+
+
+# nginx
