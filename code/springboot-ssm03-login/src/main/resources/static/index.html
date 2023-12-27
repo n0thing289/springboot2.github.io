@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>ahhh</title>
-    <script src="login/js/jquery-3.6.0.min.js"></script>
-    <script src="login/js/axios-0.18.0.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/axios-0.18.0.js"></script>
+    <script src="js/interceptor.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
 <!--    这个页面要做拦截-->
 <!--    <script src="interceptor.js"></script>-->
 
@@ -13,8 +16,21 @@
         window.onload = function(){
             $(".books").click(()=>{
 
-                window.location.href = "../templates/books/pages/books.html?token=" + localStorage.getItem("token")
+                // window.location.href = "/books?token=" + localStorage.getItem("token1")
 
+                //接到响应, 如果验证失败,跳转到登录页面
+                // axios.get("/api/books/page").then((res)=>{
+                //     if(res.data.code === "verify_ok"){
+                //         axios.request("/books.html")
+                //     }else if(res.data.code === "verify_err"){
+                //         axios.request("/login.html")
+                //     }
+                //
+                // })
+            })
+
+            $(".login").click(()=>{
+                window.location.href = "login.html"
             })
         }
     </script>
@@ -24,10 +40,22 @@
 <!--    <h3>图书管理页面</h3>-->
     <hr/>
 
-    <h2>第一次点图书管理会登录!</h2>
+<!--    <h2>第一次点图书管理会登录! 没学vue, 做不了页面鉴权跳转</h2>-->
     <button class="books">图书管理页面go</button>
     <br/>
     <br>
-    <button href="login/login.html">登录页面</button>
+    <button class="btn btn-success w-50 mt-3 login">登录页面</button>
+    <p>
+        后端登录请求接口:<br/>
+        请求方法: POST<br/>
+        请求路径: http://47.99.178.48:8080/logins<br/>
+        请求参数: {"username":"root", "password":111}<br/>
+        理想响应实例: {<br/>
+        "data": "xxx.xxx.xxx3", # 签名的token,第三部分每次都会生成的不一样, 但是服务器可以解析<br/>
+        "code": "verify_ok", # err表示验证失败<br/>
+        "msg": null<br/>
+        }
+    </p>
+
 </body>
 </html>

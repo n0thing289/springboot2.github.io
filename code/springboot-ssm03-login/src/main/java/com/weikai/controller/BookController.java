@@ -7,6 +7,7 @@ import com.weikai.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -17,6 +18,12 @@ public class BookController {
     @Autowired
     @Qualifier("bookServiceImpl")
     private BookService bookService;
+
+    @GetMapping("/page")
+    public Result getBooksPage(){
+        //如果能走到这里,说明鉴权成功那么直接告诉前端ok
+        return new Result(Code.VERIFY_OK, null, null);
+    }
 
     @GetMapping
     public Result getBookAll() {

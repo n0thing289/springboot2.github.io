@@ -6,6 +6,7 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.weikai.pojo.User;
 import com.weikai.service.UserService;
 import com.weikai.utils.Code;
+import com.weikai.utils.JWTUtil;
 import com.weikai.utils.Result;
 import jakarta.annotation.Resource;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,12 +31,7 @@ public class LoginController {
         //
         String token = null;
         if(flag){
-           //生成token
-            token = JWT.create()
-                    .withClaim("username", formUser.getUsername())
-                    .withClaim("password", formUser.getPassword())
-                    .withExpiresAt(new Date(System.currentTimeMillis() + 1000*60*60*24))
-                    .sign(Algorithm.HMAC256("sign"));
+            token = JWTUtil.generateByUser(formUser);
         }
 
         //验证成功应该给用户token

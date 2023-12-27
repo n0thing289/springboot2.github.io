@@ -23,16 +23,11 @@ public class JWTUtil {
         return token;
     }
 
-    public static boolean verify(String token) {
-        int flag = 0;
-        try {
-            JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(sign)).build();
-            jwtVerifier.verify(token);
-            flag++;
-        } catch (JWTVerificationException e) {
-            flag--;
-            throw new SystemException(Code.LOGIN_VERIFY_ERR, "验证失败");
-        }
-        return flag == 1;
+    public static void verify(String token) {
+
+        JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(sign)).build();
+        jwtVerifier.verify(token);
+
+
     }
 }

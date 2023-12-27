@@ -18,7 +18,14 @@ spring:
     username: root
     password: hsp
 
-  #配置mvc
+#  mvc:
+#    static-path-pattern: /static/**
+  #配置thymeleaf  不配置还不会出错TemplateInputException
+#  thymeleaf:
+#    suffix: .html
+#    prefix: classpath:/templates
+#    mode: html
+
 
 
 #mybatis配置
@@ -28,8 +35,5 @@ mybatis:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     #开启自动驼峰映射
     map-underscore-to-camel-case: true
-
-
-
   #别名
   type-aliases-package: com.weikai.pojo

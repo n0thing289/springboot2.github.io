@@ -3,34 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>ahhh</title>
-    <script src="login/js/jquery-3.6.0.min.js"></script>
-    <script src="login/js/axios-0.18.0.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/axios-0.18.0.js"></script>
+    <script src="js/interceptor.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
 <!--    这个页面要做拦截-->
 <!--    <script src="interceptor.js"></script>-->
 
     <script>
         //控制页面跳转
         window.onload = function(){
-            axios.interceptors.request.use(
-                config => {
-                    console.log(config) // 该处可以将config打印出来看一下，该部分将发送给后端（server端）
-                    // config.headers.Authorization = store.state.token
-
-                    console.log("拦截到请求了")
-                    // return config // 对config处理完后返回，下一步将向后端发送请求
-                    alert("111")
-                },
-                error => { // 当发生错误时，执行该部分代码
-                    // console.log(error) // 调试用
-                    return Promise.reject(error)
-                }
-            )
             $(".books").click(()=>{
+
+                // window.location.href = "/books?token=" + localStorage.getItem("token1")
+
+                //接到响应, 如果验证失败,跳转到登录页面
+                // axios.get("/api/books/page").then((res)=>{
+                //     if(res.data.code === "verify_ok"){
+                //         axios.request("/books.html")
+                //     }else if(res.data.code === "verify_err"){
+                //         axios.request("/login.html")
+                //     }
                 //
-                window.location.href = "books/pages/books2.html"
-                // axios.get("books/pages/books2.html").then((res)=>{
-                //     console.log(res)
                 // })
+            })
+
+            $(".login").click(()=>{
+                window.location.href = "login.html"
             })
         }
     </script>
@@ -38,10 +38,24 @@
 <body>
     <h1>欢迎访问我的网站!!!</h1>
 <!--    <h3>图书管理页面</h3>-->
-    <h2>只有此页面做了拦截器</h2>
+    <hr/>
+
+<!--    <h2>第一次点图书管理会登录! 没学vue, 做不了页面鉴权跳转</h2>-->
     <button class="books">图书管理页面go</button>
     <br/>
     <br>
-    <button href="login/login.html">登录页面</button>
+    <button class="btn btn-success w-50 mt-3 login">登录页面</button>
+    <p>
+        后端登录请求接口:<br/>
+        请求方法: POST<br/>
+        请求路径: http://47.99.178.48:8080/logins<br/>
+        请求参数: {"username":"root", "password":111}<br/>
+        理想响应实例: {<br/>
+        "data": "xxx.xxx.xxx3", # 签名的token,第三部分每次都会生成的不一样, 但是服务器可以解析<br/>
+        "code": "verify_ok", # err表示验证失败<br/>
+        "msg": null<br/>
+        }
+    </p>
+
 </body>
 </html>

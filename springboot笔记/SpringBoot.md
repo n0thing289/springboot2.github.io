@@ -2395,7 +2395,64 @@ Dubbo注解
 
 ```
 
+# static和templates目录
 
+读取资源（也就是web端访问static资源）其实就很简单，Spring Boot 默认就配置了 /static/** 映射，所以无需任何配置就能访问。但是需要注意的是，如果使用了模板引擎（比如 thymeleaf），就需要手动配置，以下演示两种通过模板引擎访问static资源的方式：
+
+
+
+Spring boot默认对/**的访问可以直接访问四个目录下的文件：
+
+- classpath:/public/
+- classpath:/resources/
+- classpath:/static/
+- classpath:/META-INFO/resouces/
+- 大白话就是引入路径中四个目录不用写, 直接写其中的内容
+
+
+
+[解决Spring Boot访问resources目录下的static资源问题（详细版）_springboot访问resources下的静态资源-CSDN博客](https://blog.csdn.net/dubulingbo/article/details/122105876)
+
+如果你用templates目录thymeleaf 其中的html需要使用静态资源有两种方式
+
+1. books.html中所有的引入路径, 可以直接使用static目录下的路径js/axios.js
+
+   ```html
+   <script src="/js/vue.js"></script>
+   
+   <script src="/plugins/elementui/index.js"></script>
+   
+   <script type="text/javascript" src="/js/jquery.min.js"></script>
+   
+   <script src="/js/axios-0.18.0.js"></script>
+   ```
+
+   
+
+2. 引入路径非要用/static ../static/js/axios.js类似路径 
+
+   yml配置 spring.mvc.static-path-pattern: /static/**
+
+   ```html
+   <link rel="stylesheet" href="../static/plugins/elementui/index.css">
+   
+   <link rel="stylesheet" href="../static/plugins/font-awesome/css/font-awesome.min.css">
+   
+   <link rel="stylesheet" href="../static/css/style.css">
+   ```
+
+   
+
+# 拦截/放行静态资源
+
+[SSM8=SpingMVC过滤器addResourceHandlers和拦截器HandlerIntercetor=过滤器javax.servlet.Filter和DispatchServlet和AOP_spring mvc addresourcehandlers-CSDN博客](https://blog.csdn.net/hebian1994/article/details/121271301)
+
+测试拦截器能不能拦截静态资源
+
+- 拦截器是可以拦截静态资源的
+- 如果拦截器addInterceptors( ) 写了 /** 和addResourceHandlers()都写了, 拦截器还是会拦截所有请求, 即使你放行静态资源
+
+- 静态资源的映射配置, 已经做好了. 拦截所有请求/** 后不需要写addResourceHandlers来放行静态资源
 
 # 前后端交互模块
 
@@ -2478,6 +2535,10 @@ axios.get("/mvc11/books").then((res) => {
 
 
 
+[spring boot与VUE的前后端交互_vue和springboot的前后端交互-CSDN博客](https://blog.csdn.net/yi742891270/article/details/107933050)
+
+
+
 # 登录模块
 
 jwt极简入门: [【极简入门】15分钟学会JWT的使用_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1cK4y197EM/?spm_id_from=333.337.search-card.all.click&vd_source=d179dd0d9ece5a3d72eb7942bd195cb8)
@@ -2532,6 +2593,12 @@ decode不能做验证，只可以解析负载
 
 
 
+登录controller生成token
+
+拦截器鉴权
+
+
+
 ### token存起来
 
 [vue前端利用localStorage存储token值并放到请求头headers实例_两个网站通过localstorage公用一个token-CSDN博客](https://blog.csdn.net/bentou_/article/details/105400022)
@@ -2557,6 +2624,26 @@ localStorage.setItem("", "")
 
 axios拦截所有请求: [axios 请求拦截器&响应拦截器 - 掘金 (juejin.cn)](https://juejin.cn/post/7100470316857557006)
 
+[axios请求中添加token，Authorization中添加token_authorization token-CSDN博客](https://blog.csdn.net/weixin_44994731/article/details/104472894) Bearer是错的不需要
+
 
 
 # nginx
+
+安装
+
+
+
+服务启动
+
+![image-20231227170546057](./SpringBootimgs/image-20231227170546057.png)
+
+查看配置文件
+
+- nginx -V
+
+
+
+hexo安装
+
+![image-20231227171705783](./SpringBootimgs/image-20231227171705783.png)
