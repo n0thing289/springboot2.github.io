@@ -7,15 +7,15 @@ import org.springframework.web.servlet.config.annotation.*;
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
     //解决跨域
-//    @Override
-//    public void addCorsMappings(CorsRegistry registry) {
-//        registry.addMapping("/**")
-//                .allowedOrigins("*")
-//                .allowedMethods("GET", "HEAD", "POST", "DELETE", "OPTIONS", "PUT")
-//                .allowCredentials(true)
-//                .maxAge(3600)
-//                .allowedHeaders("*");
-//    }
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowCredentials(true)
+                .allowedOrigins("*")
+                .allowedMethods("GET", "HEAD", "POST", "DELETE", "OPTIONS", "PUT")
+                .allowedHeaders("*")
+                .exposedHeaders("*");
+    }
 
 
 

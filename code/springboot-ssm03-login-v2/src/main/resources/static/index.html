@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ahhh</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/axios-0.18.0.js"></script>
+    <script src="js/interceptor.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+<!--    这个页面要做拦截-->
+<!--    <script src="interceptor.js"></script>-->
+
+    <script>
+        //控制页面跳转
+        window.onload = function(){
+            $(".login").click(()=>{
+                window.location.href = "login.html"
+            })
+        }
+    </script>
+</head>
+<body>
+    <h1>欢迎访问我的网站!!!</h1>
+    <hr/>
+
+    <br/>
+    <br>
+    <button class="btn btn-success w-50 mt-3 login">测试登录接口： 登录后会打印token</button>
+    <p>
+        后端登录POST请求接口:<br/>
+        请求方法: POST<br/>
+        请求路径: http://47.99.178.48:8080/api/logins<br/>
+        请求参数: {"username":"root", "password":111}<br/>
+        理想响应实例: {<br/>
+        "data": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IjExMSIsImV4cCI6MTcwMzgxOTY1MSwidXNlcm5hbWUiOiJyb290In0.yjvHfpEUYn7cCGDecozAD3YcQraFouNeWV7BiGkNb_g", # 签名的token,第三部分每次都会生成的不一样, 但是服务器可以解析<br/>
+        "code": "verify_ok", # err表示验证失败<br/>
+        "msg": null<br/>
+        }
+    </p>
+    <br>
+    <br>
+    <br>
+    <p>
+        后端登录GET请求 测试获取token接口:<br/>
+        请求方法: GET<br/>
+        测试路径: http://47.99.178.48:8080/api/logins?username=root&password=111<br/>
+        理想响应实例: {<br/>
+        "data": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwYXNzd29yZCI6IjExMSIsImV4cCI6MTcwMzgxOTY1MSwidXNlcm5hbWUiOiJyb290In0.yjvHfpEUYn7cCGDecozAD3YcQraFouNeWV7BiGkNb_g", # 签名的token,第三部分每次都会生成的不一样, 但是服务器可以解析<br/>
+        "code": "verify_ok", # err表示验证失败<br/>
+        "msg": null<br/>
+        }
+    </p>
+
+</body>
+</html>

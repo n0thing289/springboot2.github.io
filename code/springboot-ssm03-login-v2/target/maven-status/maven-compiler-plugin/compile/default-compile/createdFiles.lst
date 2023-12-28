@@ -1,0 +1,9 @@
+com\weikai\controller\LoginController.class
+com\weikai\service\UserService.class
+com\weikai\service\impl\UserServiceImpl.class
+com\weikai\utils\JWTUtil.class
+com\weikai\mapper\UserMapper.class
+com\weikai\pojo\User.class
+com\weikai\utils\Code.class
+com\weikai\LoginV2Application.class
+com\weikai\utils\Result.class

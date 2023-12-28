@@ -2454,6 +2454,8 @@ Spring boot默认对/**的访问可以直接访问四个目录下的文件：
 
 - 静态资源的映射配置, 已经做好了. 拦截所有请求/** 后不需要写addResourceHandlers来放行静态资源
 
+
+
 # 前后端交互模块
 
 axios
@@ -2628,22 +2630,82 @@ axios拦截所有请求: [axios 请求拦截器&响应拦截器 - 掘金 (juejin
 
 
 
-# nginx
-
-安装
 
 
+# 跨域问题
 
-服务启动
-
-![image-20231227170546057](./SpringBootimgs/image-20231227170546057.png)
-
-查看配置文件
-
-- nginx -V
+本地模拟跨域请求-postman [PostMan 跨域测试_postman模拟跨域-CSDN博客](https://blog.csdn.net/Joker_ZJN/article/details/125790538)
 
 
 
-hexo安装
+springboot配置跨域代码解决跨域问题
 
-![image-20231227171705783](./SpringBootimgs/image-20231227171705783.png)
+[【跨域问题】When allowCredentials is true, allowedOrigins cannot contain the special value “*“ since that-CSDN博客](https://blog.csdn.net/qq_45696683/article/details/121587823)
+
+```java
+@Configuration
+public class WebMvcConfig implements WebMvcConfigurer {
+    //解决跨域
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+            // 允许哪个请求头
+            .allowedHeaders("*")
+            // 允许哪个方法跨域
+            .allowedMethods("*")
+            // 允许哪个请求来源进行跨域
+//          .allowedOrigins("*")
+            .allowedOriginPatterns("*")
+            // 是否允许携带cookie进行跨域
+            .allowCredentials(true);
+//          .exposedHeaders("*");
+    }
+}
+```
+
+
+
+
+
+# nginx使用-动静结合
+
+[windows系统下安装Nginx以及简单使用（详解）_nginx windows-CSDN博客](https://blog.csdn.net/weixin_44251179/article/details/129700793)
+
+
+
+proxy_pass反向代理。upstream 负载均衡。
+
+![image-20231228153405014](./SpringBootimgs/image-20231228153405014.png)
+
+配置
+
+```
+http {
+	upstream booksManager {
+        server localhost:8080 weight=1;
+        server localhost:9090 weight=1;
+    }
+	server {
+        listen       80;
+        server_name  localhost;
+
+        location / {
+            root html				   # root就是根目录是当前html目录
+            index index.html index.htm # index默认不写的时候转到的文件
+            
+            # http://localhost:80/ => http://booksManager
+            # http://booksManager => http://localhost:8080
+            # http://booksManager => localhost:9090
+            proxy_pass http://booksManager;
+        }
+    }
+}
+
+
+
+```
+
+
+
+- Nginx通常作为反向代理服务器来部署，可以将客户端请求转发到内部的Web服务器或应用服务器上。它可以配置为使用不同的负载均衡算法，并可以与各种缓存系统集成。
+- Tomcat可以独立作为Web服务器运行，也可以与其他Web服务器集成。它可以部署多个Web应用程序（WAR文件），并具有自己的管理界面和工具集，方便应用程序的管理和维护。

@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="springboot-ssm" />
         <module name="springboot-ssm03-login" />
+        <module name="springboot-ssm03-login-v2" />
         <module name="springboot-019-transaction" />
         <module name="springboot-003-second" />
         <module name="springboot-028-thymeleaf-cource" />
@@ -20,6 +21,7 @@
         <module name="springboot-017-mapper" />
         <module name="springboot-ssm02" />
         <module name="springboot-005-mvc" />
+        <module name="springboot-ssm03-login-v3-origin" />
         <module name="springboot-006-environment" />
         <module name="springboot-010-container" />
         <module name="springboot-011-commandlinerunner" />
@@ -47,7 +49,10 @@
       <module name="springboot-028-thymeleaf-cource" target="17" />
       <module name="springboot-ssm" target="17" />
       <module name="springboot-ssm02" target="17" />
+      <module name="springboot-ssm02-books" target="17" />
       <module name="springboot-ssm03-login" target="17" />
+      <module name="springboot-ssm03-login-v2" target="17" />
+      <module name="springboot-ssm03-login-v3-origin" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -71,7 +76,10 @@
       <module name="springboot-028-thymeleaf-cource" options="-parameters" />
       <module name="springboot-ssm" options="-parameters" />
       <module name="springboot-ssm02" options="-parameters" />
+      <module name="springboot-ssm02-books" options="-parameters" />
       <module name="springboot-ssm03-login" options="-parameters" />
+      <module name="springboot-ssm03-login-v2" options="-parameters" />
+      <module name="springboot-ssm03-login-v3-origin" options="-parameters" />
     </option>
   </component>
 </project>
