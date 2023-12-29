@@ -2466,7 +2466,9 @@ rest应用
 
 响应数据的规范化
 
+为什么前端需要/api/xxx？
 
+vue项目打包后应该是dist（ruoyi那样）![image-20231229135839412](./SpringBootimgs/image-20231229135839412.png)
 
 ///////////////////////////
 
@@ -2665,7 +2667,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
 
 
-
+vue项目部署到nginx
 
 # nginx使用-动静结合
 
@@ -2707,5 +2709,31 @@ http {
 
 
 
-- Nginx通常作为反向代理服务器来部署，可以将客户端请求转发到内部的Web服务器或应用服务器上。它可以配置为使用不同的负载均衡算法，并可以与各种缓存系统集成。
-- Tomcat可以独立作为Web服务器运行，也可以与其他Web服务器集成。它可以部署多个Web应用程序（WAR文件），并具有自己的管理界面和工具集，方便应用程序的管理和维护。
+前端项目部署到nginx
+
+使用负载均衡，反向代理来实现动静结合与后端通信
+
+
+
+# jmeter
+
+
+
+# maven 分模块开发&打包
+
+
+
+# Spring Security 
+
+狂神说：https://www.bilibili.com/video/BV1KE411i7bC/
+
+在==项目之初==就要考虑编写进去==认证==和==授权==
+
+
+
+
+
+# redis
+
+
+

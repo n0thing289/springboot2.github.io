@@ -18,11 +18,13 @@
       <module fileurl="file://$PROJECT_DIR$/springboot-025-war/springboot-025-war.iml" filepath="$PROJECT_DIR$/springboot-025-war/springboot-025-war.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-027-thymeleaf-first/springboot-027-thymeleaf-first.iml" filepath="$PROJECT_DIR$/springboot-027-thymeleaf-first/springboot-027-thymeleaf-first.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-028-thymeleaf-cource/springboot-028-thymeleaf-cource.iml" filepath="$PROJECT_DIR$/springboot-028-thymeleaf-cource/springboot-028-thymeleaf-cource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-security-01/springboot-security-01.iml" filepath="$PROJECT_DIR$/springboot-security-01/springboot-security-01.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-ssm/springboot-ssm.iml" filepath="$PROJECT_DIR$/springboot-ssm/springboot-ssm.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-ssm02-books/springboot-ssm02.iml" filepath="$PROJECT_DIR$/springboot-ssm02-books/springboot-ssm02.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-ssm03-login/springboot-ssm03-login.iml" filepath="$PROJECT_DIR$/springboot-ssm03-login/springboot-ssm03-login.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-ssm03-login-v2/springboot-ssm03-login-v2.iml" filepath="$PROJECT_DIR$/springboot-ssm03-login-v2/springboot-ssm03-login-v2.iml" />
       <module fileurl="file://$PROJECT_DIR$/springboot-ssm03-login-v3-origin/springboot-ssm03-login-v3-origin.iml" filepath="$PROJECT_DIR$/springboot-ssm03-login-v3-origin/springboot-ssm03-login-v3-origin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-ssm03-login-v4-vue/springboot-ssm03-login-v4-vue.iml" filepath="$PROJECT_DIR$/springboot-ssm03-login-v4-vue/springboot-ssm03-login-v4-vue.iml" />
     </modules>
   </component>
 </project>

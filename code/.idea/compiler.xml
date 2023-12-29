@@ -25,8 +25,10 @@
         <module name="springboot-006-environment" />
         <module name="springboot-010-container" />
         <module name="springboot-011-commandlinerunner" />
+        <module name="springboot-security-01" />
         <module name="springboot-002-first" />
         <module name="springboot-009-jsp" />
+        <module name="springboot-ssm03-login-v4-vue" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -47,12 +49,14 @@
       <module name="springboot-026-wardemo" target="17" />
       <module name="springboot-027-thymeleaf-first" target="17" />
       <module name="springboot-028-thymeleaf-cource" target="17" />
+      <module name="springboot-security-01" target="17" />
       <module name="springboot-ssm" target="17" />
       <module name="springboot-ssm02" target="17" />
       <module name="springboot-ssm02-books" target="17" />
       <module name="springboot-ssm03-login" target="17" />
       <module name="springboot-ssm03-login-v2" target="17" />
       <module name="springboot-ssm03-login-v3-origin" target="17" />
+      <module name="springboot-ssm03-login-v4-vue" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -74,12 +78,14 @@
       <module name="springboot-026-wardemo" options="-parameters" />
       <module name="springboot-027-thymeleaf-first" options="-parameters" />
       <module name="springboot-028-thymeleaf-cource" options="-parameters" />
+      <module name="springboot-security-01" options="-parameters" />
       <module name="springboot-ssm" options="-parameters" />
       <module name="springboot-ssm02" options="-parameters" />
       <module name="springboot-ssm02-books" options="-parameters" />
       <module name="springboot-ssm03-login" options="-parameters" />
       <module name="springboot-ssm03-login-v2" options="-parameters" />
       <module name="springboot-ssm03-login-v3-origin" options="-parameters" />
+      <module name="springboot-ssm03-login-v4-vue" options="-parameters" />
     </option>
   </component>
 </project>

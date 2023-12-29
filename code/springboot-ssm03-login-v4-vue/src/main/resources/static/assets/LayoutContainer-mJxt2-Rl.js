@@ -1,0 +1,1 @@
+import{_ as t}from"./_plugin-vue_export-helper-x3n3nnut.js";import{c as o,o as n,d as c,e as r,h as a}from"./index-7BRyS6w6.js";const s={};function _(l,f){const e=o("el-button");return n(),c(e,null,{default:r(()=>[a("炜开大大")]),_:1})}const p=t(s,[["render",_]]);export{p as default};
