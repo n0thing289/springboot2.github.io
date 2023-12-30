@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/../../../../28927/Desktop/国赛第一套/security/security-02-5.4.X/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../../28927/Desktop/国赛第一套/security/security-02-5.4.X/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-002-first/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-003-second/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-005-mvc/src/main/java" charset="UTF-8" />
@@ -18,7 +20,6 @@
     <file url="file://$PROJECT_DIR$/springboot-025-war/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-027-thymeleaf-first/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-028-thymeleaf-cource/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/springboot-security-01/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-ssm/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-ssm02-books/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/springboot-ssm02-books/src/main/resources" charset="UTF-8" />

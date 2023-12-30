@@ -2632,6 +2632,10 @@ axios拦截所有请求: [axios 请求拦截器&响应拦截器 - 掘金 (juejin
 
 
 
+## 实现spring security整合jwt
+
+
+
 
 
 # 跨域问题
@@ -2730,6 +2734,40 @@ http {
 在==项目之初==就要考虑编写进去==认证==和==授权==
 
 
+
+![image-20231229205913634](./SpringBootimgs/image-20231229205913634.png)
+
+[Spring Security 替换WebSecurityConfigurerAdapter (Deprecated)的方法_httpsecurity and()替代方法-CSDN博客](https://blog.csdn.net/allway2/article/details/127781632)
+
+[Spring Security（新版本）实现权限认证与授权_security权限认证-CSDN博客](https://blog.csdn.net/weixin_46073538/article/details/128641746)
+
+[SpringBoot3版本下SpringSecurity的HttpSecurity配置_springboot3 security-CSDN博客](https://blog.csdn.net/InkSlab_/article/details/130937812?spm=1001.2101.3001.6650.6&utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-6-130937812-blog-129309522.235^v40^pc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-6-130937812-blog-129309522.235^v40^pc_relevant_anti_vip&utm_relevant_index=12)
+
+[SpringBoot3 + SpringSecurity6 前后端分离_spring boot3 +security-CSDN博客](https://blog.csdn.net/qq_74312711/article/details/134558633?spm=1001.2101.3001.6650.3&utm_medium=distribute.pc_relevant.none-task-blog-2~default~YuanLiJiHua~Position-3-134558633-blog-130937812.235^v40^pc_relevant_anti_vip&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~YuanLiJiHua~Position-3-134558633-blog-130937812.235^v40^pc_relevant_anti_vip&utm_relevant_index=6)
+
+```
+数据库的用户表应该有这些字段
+username
+password
+token
+role
+status
+id
+```
+
+
+
+跨域问题？
+
+用户认证-登录和授权
+
+注销及权限控制（前端根据账号的role控制显示内容）
+
+记住我及首页定制
+
+
+
+使用自定义登录页面
 
 
 

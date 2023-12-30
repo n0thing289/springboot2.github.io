@@ -10,6 +10,7 @@
         <module name="springboot-ssm03-login" />
         <module name="springboot-ssm03-login-v2" />
         <module name="springboot-019-transaction" />
+        <module name="security-02-5.4.X" />
         <module name="springboot-003-second" />
         <module name="springboot-028-thymeleaf-cource" />
         <module name="springboot-025-war" />
@@ -25,13 +26,13 @@
         <module name="springboot-006-environment" />
         <module name="springboot-010-container" />
         <module name="springboot-011-commandlinerunner" />
-        <module name="springboot-security-01" />
         <module name="springboot-002-first" />
         <module name="springboot-009-jsp" />
         <module name="springboot-ssm03-login-v4-vue" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="security-02-5.4.X" target="17" />
       <module name="springboot-002-first" target="17" />
       <module name="springboot-003-second" target="17" />
       <module name="springboot-005-mvc" target="17" />
@@ -61,6 +62,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="security-02-5.4.X" options="-parameters" />
       <module name="springboot-002-first" options="-parameters" />
       <module name="springboot-003-second" options="-parameters" />
       <module name="springboot-005-mvc" options="-parameters" />
