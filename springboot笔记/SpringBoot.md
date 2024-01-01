@@ -2769,9 +2769,79 @@ id
 
 使用自定义登录页面
 
+[浅析Spring Security 的认证过程及相关过滤器 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/607321225)
 
+[浅析Spring Security 核心组件 | pjmike的博客](https://pjmike.github.io/2018/10/12/浅析Spring-Security-核心组件/#Spring-Security的核心类)
+
+==待看==: [SpringSecurity6 | 核心过滤器 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/665648469#:~:text=将SecurityContext 设置到ContextHolder中 this.securityContextHolderStrategy.setDeferredContext (deferredContext)%3B chain.doFilter (request%2C response)%3B },%2F%2F 完成后，清理上下文，移除属性 this.securityContextHolderStrategy.clearContext ()%3B request.removeAttribute (FILTER_APPLIED)%3B } })
+
+spring security 5.7 SecurityFilterChain写法
+
+[新版 Spring Security 配置的变化_defaultsecurityfilterchain-CSDN博客](https://blog.csdn.net/weixin_40379712/article/details/130056716)
+
+[Spring Security 5.7 最新配置细节（直接就能用），WebSecurityConfigurerAdapter 已废弃_websecurityconfigureradapter作废-CSDN博客](https://blog.csdn.net/qq_41340258/article/details/125138902)
+
+
+
+## 三更
+
+login页面不需要默认的
+
+账号密码需要从数据库拿
+
+登录成功生成token
+
+...
+
+很多工作我们可以做,但是security帮我们做了,你需要了解security的工程流程,才知道要修改什么, 修改哪里
+
+监听器 -> 过滤器链 -> dispatcherservlet (前置拦截器 -> mapperHandle -> 后置拦截器 -> 最终拦截器)
+
+
+
+替换UserDetailsService的实现类InMemoInMeryUserDetailsManager,才能在数据库中查询数据
+
+```
+只要我去实现了这个接口默认就会自动替换InMemoInMeryUserDetailsManager
+然后需要返回UserDetails的对象(自己新建一个再封装user)就可以用了
+明文存需要{noop}
+```
+
+
+
+替换UsernamePasswordAuthenticationFilter, 自己定义一个controll接口, 才能把生成token返回
 
 # redis
 
 
 
+
+
+# Maven 多模块开发，允许，测试，打包
+
+
+
+建父子工程
+
+如何进行模块之间的调用： 引入依赖即可
+
+[SpringBoot 多模块项目打包_spring boot 多个启动微服务统一打包-CSDN博客](https://blog.csdn.net/qq_39974376/article/details/108087260?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-108087260-blog-115152850.235^v40^pc_relevant_anti_vip&spm=1001.2101.3001.4242.1&utm_relevant_index=3)
+
+1. 夫模块不需要src，pom
+
+   ```xml
+   夫模块pom只需要
+   1. springboot parent
+   2. <packaging>为pom
+   3. <modules>管理子模块
+   4. 写需要的外部依赖<dependencies>, 子模块不需要写在这里
+   5. project.build.sourceEncoding和project.reporting.outputEncoding都为UTF-8
+   ```
+
+2. 启动的子模块, 一需要把要启动的子模块作为依赖导入二是启动子模块添加打包插件spring-boot-maven-plugin
+
+```
+注意：多模块项目仅仅需要在启动类所在的模块添加打包插件即可！！不要在父类添加打包插件，因为那样会导致全部子模块都使用spring-boot-maven-plugin的方式来打包（例如BOOT-INF/com/hehe/xx），而mm-web模块引入mm-xx 的jar 需要的是裸露的类文件，即目录格式为（/com/hehe/xx）
+```
+
+3. 对夫模块打包/cleam, 右键执行打包好的启动子模块, 整个项目就跑起来了

@@ -10,7 +10,6 @@
         <module name="springboot-ssm03-login" />
         <module name="springboot-ssm03-login-v2" />
         <module name="springboot-019-transaction" />
-        <module name="security-02-5.4.X" />
         <module name="springboot-003-second" />
         <module name="springboot-028-thymeleaf-cource" />
         <module name="springboot-025-war" />
@@ -50,7 +49,7 @@
       <module name="springboot-026-wardemo" target="17" />
       <module name="springboot-027-thymeleaf-first" target="17" />
       <module name="springboot-028-thymeleaf-cource" target="17" />
-      <module name="springboot-security-01" target="17" />
+      <module name="springboot-security-01" target="1.5" />
       <module name="springboot-ssm" target="17" />
       <module name="springboot-ssm02" target="17" />
       <module name="springboot-ssm02-books" target="17" />
