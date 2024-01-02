@@ -2811,6 +2811,22 @@ login页面不需要默认的
 
 替换UsernamePasswordAuthenticationFilter, 自己定义一个controll接口, 才能把生成token返回
 
+```
+只要我去给一个AuthenticationManager, 自己的登录接口就可以代替框架接收参数,调用authenticate方法(剩下让框架完成密码认证), 我们还可以代替框架自定义返回的响应(含token的)
+然后去配置 重写注入authenticationManagerBean
+然后放行登录接口
+然后csrf关闭
+然后session关闭
+```
+
+
+
+token过滤器
+
+
+
+
+
 # redis
 
 
