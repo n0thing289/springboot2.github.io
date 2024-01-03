@@ -2802,7 +2802,7 @@ login页面不需要默认的
 替换UserDetailsService的实现类InMemoInMeryUserDetailsManager,才能在数据库中查询数据
 
 ```
-只要我去实现了这个接口默认就会自动替换InMemoInMeryUserDetailsManager
+只要我去实现了这个接口并且注入默认就会自动替换InMemoInMeryUserDetailsManager
 然后需要返回UserDetails的对象(自己新建一个再封装user)就可以用了
 明文存需要{noop}
 ```
@@ -2823,7 +2823,25 @@ login页面不需要默认的
 
 token过滤器
 
+```
+过滤器实现OncePerRequestFilter的doFilterInternal方法
+获取token, 验证token, 验证成功放入SecurityContextHolder中,验证失败抛异常
+然后去配置这个过滤器,注入spring中, 指定在security过滤器链最前面
+```
 
+细节：
+
+User就是自己用户表pojo类
+
+LoginUser才是实现UserDetails接口的pojo类
+
+没认证前的auth只有用户名作为principal密码作为cridential
+
+认证后的是authed，principal变成LoginUser（UserDetails）对象了
+
+
+
+认证配置configure
 
 
 
