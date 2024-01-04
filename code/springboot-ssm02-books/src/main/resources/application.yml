@@ -1,6 +1,6 @@
 #server
 server:
-  port: 8080
+  port: 8888
   servlet:
     context-path: /
     #解决中文乱码
