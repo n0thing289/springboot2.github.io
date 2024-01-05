@@ -2821,11 +2821,12 @@ login页面不需要默认的
 
 
 
-token过滤器
+token过滤器（目的是验证token，线程存authed，没有就不存，继续走下去，让框架完成后续）
 
 ```
 过滤器实现OncePerRequestFilter的doFilterInternal方法
-获取token, 验证token, 验证成功放入SecurityContextHolder中,验证失败抛异常
+获取token, 验证token, 验证成功放入SecurityContextHolder中,
+验证失败,继续走以及return就好了, 后面过滤器会处理有没有authed
 然后去配置这个过滤器,注入spring中, 指定在security过滤器链最前面
 ```
 
