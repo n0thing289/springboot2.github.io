@@ -2880,3 +2880,13 @@ LoginUser才是实现UserDetails接口的pojo类
 ```
 
 3. 对夫模块打包/cleam, 右键执行打包好的启动子模块, 整个项目就跑起来了
+
+
+
+# 前后端分离，模糊查询
+
+[vue+element-get和post进行请求传递数据类型（data || params）_elementui选择器发送get请求-CSDN博客](https://blog.csdn.net/qq_41485414/article/details/87870624)
+
+
+
+# 
