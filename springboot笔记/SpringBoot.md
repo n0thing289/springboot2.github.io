@@ -2891,5 +2891,15 @@ LoginUser才是实现UserDetails接口的pojo类
 
 
 
-# visio快速画流程图, 时序图,类图
+# visio快速画流程图, 时序图, 类图, 用例图
+
+[Visio如何快速制作流程图_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1534y1o76f/?spm_id_from=333.337.search-card.all.click&vd_source=d179dd0d9ece5a3d72eb7942bd195cb8)
+
+[Visio画完流程图如何快速优化排版？_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1UZ4y1h7JF/?spm_id_from=333.337.search-card.all.click&vd_source=d179dd0d9ece5a3d72eb7942bd195cb8)
+
+[UML图 | 让你快速学会使用 Visio 绘制时序图（顺序、序列），再也不用担心文档画图问题啦！！_visio 时序图-CSDN博客](https://blog.csdn.net/weixin_45821811/article/details/120814844)
+
+
+
+
 
