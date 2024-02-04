@@ -208,13 +208,13 @@ SpringBoot是Spring中的一个成员， 可以简化Spring，SpringMVC的使用
 
 SpringBoot项目的结构：
 
-![](./images/image-20210115152427829.png)
+![](./SpringBoot/image-20210115152427829.png)
 
 
 
 这些是跟maven有关的，没有maven会帮你下载相关的文件，可以删除
 
-![image-20231221151839664](./SpringBootimgs/image-20231221151839664.png)
+![image-20231221151839664](./SpringBoot/image-20231221151839664.png)
 
 
 
@@ -224,7 +224,7 @@ SpringBoot项目的结构：
 
 https://start.springboot.io
 
-![](./images/image-20210115155556662.png)
+![](./SpringBoot/image-20210115155556662.png)
 
 
 
@@ -416,9 +416,9 @@ public class SchoolInfo {
 
 不影响使用, 如果想解决需要引入一个依赖
 
-![image-20231221205342664](./SpringBootimgs/image-20231221205342664.png)
+![image-20231221205342664](./SpringBoot/image-20231221205342664.png)
 
-![image-20231221205545719](./SpringBootimgs/image-20231221205545719.png)
+![image-20231221205545719](./SpringBoot/image-20231221205545719.png)
 
 
 
@@ -508,9 +508,9 @@ SpringBoot不推荐使用jsp ，而是使用模板技术代替jsp
 
    index.jsp
 
-![image-20231221214640802](./SpringBootimgs/image-20231221214640802.png)
+![image-20231221214640802](./SpringBoot/image-20231221214640802.png)
 
-​	默认是没有蓝点的,需要在 项目结构 模块下web里面去配置![image-20231221214805264](./SpringBootimgs/image-20231221214805264.png)
+​	默认是没有蓝点的,需要在 项目结构 模块下web里面去配置![image-20231221214805264](./SpringBoot/image-20231221214805264.png)
 
 
 
@@ -518,23 +518,23 @@ SpringBoot不推荐使用jsp ，而是使用模板技术代替jsp
 
   META-INF/resources
 
-![](./SpringBootimgs/image-20231221215452263.png)
+![](./SpringBoot/image-20231221215452263.png)
 
 5）创建Controller， 访问jsp
 
-![image-20231221215127785](./SpringBootimgs/image-20231221215127785.png)
+![image-20231221215127785](./SpringBoot/image-20231221215127785.png)
 
-![image-20231221215219064](./SpringBootimgs/image-20231221215219064.png)
+![image-20231221215219064](./SpringBoot/image-20231221215219064.png)
 
 6）在application.propertis文件中配置视图解析器
 
-![image-20231221215252359](./SpringBootimgs/image-20231221215252359.png)
+![image-20231221215252359](./SpringBoot/image-20231221215252359.png)
 
 
 
 当我去尝试添加框架支持时, 写好controller被请求后, 跳转到jsp页面,但是没有反应
 
-![image-20231221213840222](./SpringBootimgs/image-20231221213840222.png)
+![image-20231221213840222](./SpringBoot/image-20231221213840222.png)
 
 因为你是通过SpringBoot框架的主程序启动的, 而我的操作是配置tomcat服务器; 冲突了, 我到底是把springboot容器放到tomcat服务器, 还是springboot存放tomcat
 
@@ -946,7 +946,7 @@ public class ProjectExceptionAdvice {
 
 - 建表
 
-  ![image-20231222215641088](./SpringBootimgs/image-20231222215641088.png)
+  ![image-20231222215641088](./SpringBoot/image-20231222215641088.png)
 
 
 
@@ -1632,7 +1632,7 @@ dubbo.registry.address=zookeeper://localhost:2181
 
 Student表：
 
-![image-20210119150418295](D:\course\25-SpringBoot\笔记\images\image-20210119150418295.png)	
+![image-20210119150418295](.\SpringBoot\image-20210119150418295.png)	
 
 CREATE TABLE `student` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -2470,7 +2470,7 @@ rest应用
 
 为什么前端需要/api/xxx？
 
-vue项目打包后应该是dist（ruoyi那样）![image-20231229135839412](./SpringBootimgs/image-20231229135839412.png)
+vue项目打包后应该是dist（ruoyi那样）![image-20231229135839412](./SpringBoot/image-20231229135839412.png)
 
 ///////////////////////////
 
@@ -2563,13 +2563,13 @@ jwt极简入门: [【极简入门】15分钟学会JWT的使用_哔哩哔哩_bili
 
 前后端分离登录流程图 vue.js
 
-![image-20231226130852593](./SpringBootimgs/image-20231226130852593.png)
+![image-20231226130852593](./SpringBoot/image-20231226130852593.png)
 
 
 
 集群，一个人用session/cookie没问题，但是一旦访问量大，服务器的内存花销很大
 
-![image-20231226133412390](./SpringBootimgs/image-20231226133412390.png)
+![image-20231226133412390](./SpringBoot/image-20231226133412390.png)
 
 axios携带cookie发请求比较麻烦
 
@@ -2579,7 +2579,7 @@ axios携带cookie发请求比较麻烦
 
 jwt流程图
 
-![image-20231226134425984](./SpringBootimgs/image-20231226134425984.png)
+![image-20231226134425984](./SpringBoot/image-20231226134425984.png)
 
 jwt集群， jwt是可以在集群中任意服务器都能解析
 
@@ -2683,7 +2683,7 @@ vue项目部署到nginx
 
 proxy_pass反向代理。upstream 负载均衡。
 
-![image-20231228153405014](./SpringBootimgs/image-20231228153405014.png)
+![image-20231228153405014](./SpringBoot/image-20231228153405014.png)
 
 配置
 
@@ -2737,7 +2737,7 @@ http {
 
 
 
-![image-20231229205913634](./SpringBootimgs/image-20231229205913634.png)
+![image-20231229205913634](./SpringBoot/image-20231229205913634.png)
 
 [Spring Security 替换WebSecurityConfigurerAdapter (Deprecated)的方法_httpsecurity and()替代方法-CSDN博客](https://blog.csdn.net/allway2/article/details/127781632)
 
@@ -2801,7 +2801,9 @@ login页面不需要默认的
 
 
 
-替换UserDetailsService的实现类InMemoInMeryUserDetailsManager,才能在数据库中查询数据
+书写流程
+
+1. 替换UserDetailsService的实现类InMemoInMeryUserDetailsManager,才能在数据库中查询数据
 
 ```
 只要我去实现了这个接口并且注入默认就会自动替换InMemoInMeryUserDetailsManager
@@ -2811,10 +2813,10 @@ login页面不需要默认的
 
 
 
-替换UsernamePasswordAuthenticationFilter, 自己定义一个controll接口, 才能把生成token返回
+2. 替换UsernamePasswordAuthenticationFilter, 自己定义一个controll接口, 才能把生成token返回
 
 ```
-只要我去给一个AuthenticationManager, 自己的登录接口就可以代替框架接收参数,调用authenticate方法(剩下让框架完成密码认证), 我们还可以代替框架自定义返回的响应(含token的)
+只要我去给一个AuthenticationManager, 自己的登录接口就可以代替框架接收参数,调用authenticate方法(剩下让框架完成密码认证),(需要传入UsernamePasswordAuthenticationToken) 我们还可以代替框架自定义返回的响应(含token的)
 然后去配置 重写注入authenticationManagerBean
 然后放行登录接口
 然后csrf关闭
@@ -2823,7 +2825,7 @@ login页面不需要默认的
 
 
 
-token过滤器（目的是验证token，线程存authed，没有就不存，继续走下去，让框架完成后续）
+3. token过滤器（目的是验证token，线程存authed，没有就不存，继续走下去，让框架完成后续）
 
 ```
 过滤器实现OncePerRequestFilter的doFilterInternal方法
@@ -2831,6 +2833,67 @@ token过滤器（目的是验证token，线程存authed，没有就不存，继�
 验证失败,继续走以及return就好了, 后面过滤器会处理有没有authed
 然后去配置这个过滤器,注入spring中, 指定在security过滤器链最前面
 ```
+
+
+
+4. 异常处理器
+
+```java
+实现AuthenticationEntryPoint接口的commence方法
+由于是在过滤器链阶段的异常, 需要使用Jackon的ObjectMapper()对象方法封装异常信息给前端
+response.setContentType("application/json;charset=UTF-8");
+ObjectMapper objectMapper = new ObjectMapper();
+objectMapper.writeValue(response.getOutputStream(),Result.fail(authException.getMessage()));
+```
+
+
+
+5. 标准Secutity配置
+
+```java
+@Configuration
+public class WebSecurityConfigAdapter extends WebSecurityConfigurerAdapter {
+    @Resource
+    private AuthenticationEntryPointImpl authenticationEntryPoint;
+
+    @Resource
+    private JwtAuthenticationFilter jwtAuthenticationFilter;
+
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.csrf().disable();
+        http.sessionManagement()
+        	.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        http.cors();
+        http.authorizeRequests()
+            .antMatchers("/login").anonymous()
+            .anyRequest().authenticated();
+
+        //TODO 异常处理器
+        http.exceptionHandling()
+            .authenticationEntryPoint(authenticationEntryPoint);
+        //TODO JWT验证器
+        http.addFilterBefore(
+            jwtAuthenticationFilter, 
+            UsernamePasswordAuthenticationFilter.class);
+    }
+}
+```
+
+>注意
+>
+>跨域请求, WebMvcConfig addCorsMappings()也需要配置
 
 细节：
 
@@ -2890,16 +2953,6 @@ LoginUser才是实现UserDetails接口的pojo类
 [vue+element-get和post进行请求传递数据类型（data || params）_elementui选择器发送get请求-CSDN博客](https://blog.csdn.net/qq_41485414/article/details/87870624)
 
 模糊查日期
-
-
-
-# visio快速画流程图, 时序图, 类图, 用例图
-
-[Visio如何快速制作流程图_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1534y1o76f/?spm_id_from=333.337.search-card.all.click&vd_source=d179dd0d9ece5a3d72eb7942bd195cb8)
-
-[Visio画完流程图如何快速优化排版？_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1UZ4y1h7JF/?spm_id_from=333.337.search-card.all.click&vd_source=d179dd0d9ece5a3d72eb7942bd195cb8)
-
-[UML图 | 让你快速学会使用 Visio 绘制时序图（顺序、序列），再也不用担心文档画图问题啦！！_visio 时序图-CSDN博客](https://blog.csdn.net/weixin_45821811/article/details/120814844)
 
 
 
