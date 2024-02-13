@@ -2785,7 +2785,7 @@ spring security 5.7 SecurityFilterChain写法
 
 
 
-## 三更
+## 三更-认证
 
 login页面不需要默认的
 
@@ -2907,7 +2907,10 @@ LoginUser才是实现UserDetails接口的pojo类
 
 
 
+## 三更-授权
 
+1. 配置全局授权， 给方法加注释
+2. 封装权限信息
 
 
 
