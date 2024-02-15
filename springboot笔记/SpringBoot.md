@@ -2910,9 +2910,34 @@ LoginUser才是实现UserDetails接口的pojo类
 ## 三更-授权
 
 1. 配置全局授权， 给方法加注释
+
+   ```
+   开启全局鉴权
+   @EnableGlobalMethodSecurity(prePostEnabled = true)
+   zai'me
+   ```
+
+   
+
 2. 封装权限信息
 
+   ```
+   修改UserDetails的pojo实现类，实现getAuthorities()方法和两个属性
+   ```
 
+   ```
+   修改UserDetailService的实现类,实现查询权限列表并封装
+   ```
+
+   
+
+3. 从token获取权限
+
+   ```
+   修改JwtAuthenticationFilter, 实现根据用户获取权限(把权限信息写入token),传给UsernamePasswordAuthenticationToken构造器第三个参数
+   ```
+
+   
 
 # redis
 
