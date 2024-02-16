@@ -2914,7 +2914,7 @@ LoginUser才是实现UserDetails接口的pojo类
    ```
    开启全局鉴权
    @EnableGlobalMethodSecurity(prePostEnabled = true)
-   zai'me
+   @PreAuthorize("hasAuthority('test')")
    ```
 
    
