@@ -2939,6 +2939,10 @@ LoginUser才是实现UserDetails接口的pojo类
 
    
 
+4. 从数据库中查询权限信息
+
+   RBAC权限模型 =》 5个表
+
 # redis
 
 
