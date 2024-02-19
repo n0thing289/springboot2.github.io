@@ -2941,7 +2941,14 @@ LoginUser才是实现UserDetails接口的pojo类
 
 4. 从数据库中查询权限信息
 
-   RBAC权限模型 =》 5个表
+   RBAC权限模型 =》 5个表, sql
+
+
+
+## 自定义异常处理
+
+1. 认证失败，异常信息会封装成AuthenticationException然后调用AuthenticationEntryPoint
+2. 授权失败，异常信息会封装成AccessDeniedException然后调用AccessDeniedHandler
 
 # redis
 
