@@ -2729,7 +2729,9 @@ http {
 
 
 
-# Spring Security 
+# Spring Security
+
+>适用于security框架2.5.X ~= springboot 2.5.X 2.7.X
 
 狂神说：https://www.bilibili.com/video/BV1KE411i7bC/
 
